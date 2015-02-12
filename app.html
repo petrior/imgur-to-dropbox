@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+		<title>Imgur images to Dropbox</title>
+		<link rel="stylesheet" href="app.css">
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="5xvfojgnkzftf8n"></script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="dropboxBtn"></div>
+			<div id="search">
+				<span><input id="searchText" type="text" placeholder="Search" onkeypress="app.checkEnter(event);"></input></span>
+				<button id="searchBtn">Go!</button>
+			</div>
+			<div><img id="loadingMain" src="loading2.gif"></img></div>
+			<div id="viewSelected">
+				<a href="#" id="showSelected"><span class="iSelected">Toggle selected images</span><span class="iSelected" id="selectedImages"></span></a>
+				<div id="selected">
+					<span>Image</span><span id="cSelectedPic"></span><span>of</span><span id="cSelectedTotal"></span><br>
+					<button id="previousSelected"><</button>
+					<button id="nextSelected">></button>
+					<div id="selectedContainer"></div>
+				</div>
+			</div>
+			<div id="viewAll">
+				<a href="#" id="toggleResults"><span class="iSelected">Toggle search results</span></a>
+					<div id="allPictures">
+						<span>Image</span><span id="currentImg"></span><span>of</span><span id="totalImages"></span>
+						<button id="loadMore">Load more</button><span id="error"></span>
+						<div><img id="loading" src="loading2.gif"></img></div>
+						<button id="previousPic"><</button>
+						<button id="randomPic">Random</button>
+						<button id="nextPic">></button><br>
+						<div id="imageContainer"></div>
+					</div>
+			</div>
+			<p>Click images in search results to select/deselct them.</br>
+			Click images in selected images to deselect them.</p>
+		</div>
+		<script src="app.js"></script>
+		<script>
+			var app = new App();
+		</script>
+	</body>
+</html>
